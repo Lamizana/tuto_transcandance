@@ -34,11 +34,12 @@ base de données créer: db.sqlite3
 - merchex est un répertoire de projet.
 	contient l'ensemble du projet: c'est la tour de controle.
 
-Pour installer l'application listing dans notre projet:
-	- aller dans merchex/setting.py: rajouter 'listings' à la fin de INSTALLED_APPS.
+- Pour installer l'application listing dans notre projet:
+	aller dans merchex/setting.py: rajouter 'listings' à la fin de INSTALLED_APPS.
 
 ----------------------------------------------------------------------------
 Fichier views.py gere l'ensemble des vues avec le fichier urls.py:
+
 	- Une vue est une fonction qui accepte un objet HttpRequest comme 
 	  parametre et retourne un objet HttpResponse.
 	- La rajouter dans le fichier merchex/urls.py.
