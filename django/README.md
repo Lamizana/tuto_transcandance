@@ -17,6 +17,8 @@ Quit the server with CONTROL-C.
 
 ----------------------------------------------------------------------------
 - Migrations:
+	Une migration est un ensemble d'instruction permettent de passer le shema de
+	notre base de donnees d'un etat à un autre.
 	elles représente un moyen de configurer la base de données de notre application.
 - Pour créer notre base de données:
 ```
@@ -43,3 +45,15 @@ Fichier views.py gere l'ensemble des vues avec le fichier urls.py:
 	- Une vue est une fonction qui accepte un objet HttpRequest comme 
 	  parametre et retourne un objet HttpResponse.
 	- La rajouter dans le fichier merchex/urls.py.
+
+----------------------------------------------------------------------------
+LES MODELES: models.py
+
+- Un modele définit les caractéristiques que nous voulons stocker.
+- Les caractéristique sont définit par des champs.
+- Un modéle permet d'avoir une mémoire persistante.
+- une fois le modele creer:
+	> python3 manage.py makemigrations
+- le mettre à jour:
+	python manage.py migrate
+- pour sto
