@@ -19,12 +19,15 @@ Quit the server with CONTROL-C.
 - Migrations:
 	elles représente un moyen de configurer la base de données de notre application.
 - Pour créer notre base de données:
-	> python3 manage.py migrate
-	base de données créer: db.sqlite3
+```
+> python3 manage.py migrate
+```
+base de données créer: db.sqlite3
 
 - Création de notre application, ici listings qui liste les marchandises:
-	> python3 manage.py startapp listings
-
+```
+> python3 manage.py startapp listings
+```
 - listing est un repertoire d'application:
 	chaque répertoire d'application est spécifique à une application.
 
