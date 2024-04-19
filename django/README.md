@@ -18,3 +18,12 @@
 
 - Création de notre application, ici listings qui liste les marchandises:
 	> python3 manage.py startapp listings
+
+- listing est un repertoire d'application:
+	chaque répertoire d'application est spécifique à une application.
+
+- merchex est un répertoire de projet.
+	contient l'ensemble du projet: c'est la tour de controle.
+
+- Pour installer l'application listing dans notre projet:
+	aller dans merchex/setting.py: rajouter 'listings' à la fin de INSTALLED_APPS.

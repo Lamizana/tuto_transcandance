@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    README.md                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: alamizan <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/16 10:32:43 by alamizan          #+#    #+#              #
-#    Updated: 2024/04/16 14:34:56 by alamizan         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 1. HTML: permet de creer et structurer du contenu.
 - Utilisation de balise qui permettent de decrire le contenu, s'ecrit entre chevrons < >.
 - Fichier HTML -> file.html
