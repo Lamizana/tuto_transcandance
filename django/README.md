@@ -1,11 +1,17 @@
-- Pour generer un projet qvec django:
-	> django-admin startproject projectName
+- Pour générer un projet avec django:
+```
+> django-admin startproject projectName
+```
 - Pour lancer le server Django avec manage.py:
-	> python3 runserver
+```
+> python3 runserver
+```
 - Affichage au lancement de Django:
-	Django version 5.0.4, using settings 'merchex.settings'
-	Starting development server at http://127.0.0.1:8000/ <- adresse.
-	Quit the server with CONTROL-C.
+```
+Django version 5.0.4, using settings 'merchex.settings'
+Starting development server at http://127.0.0.1:8000/ <- adresse.
+Quit the server with CONTROL-C.
+```
 - Se connecter au navigateur:
 	l'application est hébergé sur notre machine et non en ligne.
 
