@@ -1,10 +1,14 @@
+- Pour activer notre environement virtuel:
+```
+> source env/bin/activate
+```
 - Pour générer un projet avec django:
 ```
 > django-admin startproject projectName
 ```
 - Pour lancer le server Django avec manage.py:
 ```
-> python3 runserver
+> python3  manage.py runserver
 ```
 - Affichage au lancement de Django:
 ```
@@ -30,6 +34,8 @@ base de données créer: db.sqlite3
 ```
 > python3 manage.py startapp listings
 ```
+
+
 - listing est un repertoire d'application:
 	chaque répertoire d'application est spécifique à une application.
 
@@ -52,8 +58,11 @@ LES MODELES: models.py
 - Un modele définit les caractéristiques que nous voulons stocker.
 - Les caractéristique sont définit par des champs.
 - Un modéle permet d'avoir une mémoire persistante.
-- une fois le modele creer:
+- Ajouter d'abord le models dans models.py
+- Creer le modele:
 	> python3 manage.py makemigrations
 - le mettre à jour:
 	python manage.py migrate
-- pour sto
+
+---------------------------------------------------------------------------
+LES TEMPLATE: Affiche les données.

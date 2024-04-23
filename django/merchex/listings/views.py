@@ -18,7 +18,6 @@ def accueil(request):
             <li>{bands[0].name}</li>
             <li>{bands[1].name}</li>
             <li>{bands[2].name}</li>
-            <li>{bands[3].name}</li>
         </ol>
         """)
 
@@ -32,13 +31,11 @@ def listings(request):
         <h1>Listing</h1> 
         <p>Descriptif:</p>
         <ul>
-            <li>{bands[0].name} : {listings[0].title}</li>
-            <li>{bands[1].name} : {listings[1].title}</li>
-            <li>{bands[2].name} : {listings[2].title}</li>
-            <li>{bands[3].name} : {listings[3].title}</li>
+            <li>{listings[0].title}</li>
+            <li>{listings[1].title}</li>
+            <li>{listings[2].title}</li>
         </ul>
         """)
     
-
 def contact(request):
     return HttpResponse('<h1>Contact us</h1> <p>Vue constact</p>')
