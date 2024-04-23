@@ -1,0 +1,16 @@
+<!-- listings/templates/listings/base.html -->
+<!-- Va servir de base pour toutes nos page html -->
+<!-- toutes les pages seront dans content -->
+
+{% load static %}
+
+<html>
+    <head>
+        <title>Merchex</title>
+        <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
+    </head>
+
+    <body>
+        {% block content %}{% endblock%}
+    </body>
+</html>

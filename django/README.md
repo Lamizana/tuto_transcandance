@@ -60,9 +60,15 @@ LES MODELES: models.py
 - Un modéle permet d'avoir une mémoire persistante.
 - Ajouter d'abord le models dans models.py
 - Creer le modele:
-	> python3 manage.py makemigrations
+```
+> python3 manage.py makemigrations
+'''
+```
+
 - le mettre à jour:
 	python manage.py migrate
 
 ---------------------------------------------------------------------------
-LES TEMPLATE: Affiche les données.
+LES TEMPLATES / GABARITS: Affiche et recueille les données .
+
+Voir README.md dans listings/templates/listings/Readme.md

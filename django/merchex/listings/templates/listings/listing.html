@@ -1,0 +1,19 @@
+<!-- listings/templates/listings/listng.html -->
+{% extends 'listings/base.html' %}
+{% block content %}
+
+<h1>Listing</h1> 
+<p>Descriptif: {{ listings|length }} éléments.</p>
+
+<!-- Affiche les elements de la liste si il y en a: -->
+{% if listings %}
+    <ul>
+        {% for listing in listings %}
+            <li>{{ listing.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    Aucune liste.
+{% endif %}
+
+{% endblock %}
