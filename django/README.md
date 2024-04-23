@@ -1,17 +1,17 @@
 - Pour activer notre environement virtuel:
-```
+```bash
 > source env/bin/activate
 ```
 - Pour générer un projet avec django:
-```
+```bash
 > django-admin startproject projectName
 ```
 - Pour lancer le server Django avec manage.py:
-```
+```bash
 > python3  manage.py runserver
 ```
 - Affichage au lancement de Django:
-```
+```bash
 Django version 5.0.4, using settings 'merchex.settings'
 Starting development server at http://127.0.0.1:8000/ <- adresse.
 Quit the server with CONTROL-C.
@@ -25,13 +25,13 @@ Quit the server with CONTROL-C.
 	notre base de donnees d'un etat à un autre.
 	elles représente un moyen de configurer la base de données de notre application.
 - Pour créer notre base de données:
-```
+```bash
 > python3 manage.py migrate
 ```
 base de données créer: db.sqlite3
 
 - Création de notre application, ici listings qui liste les marchandises:
-```
+```bash
 > python3 manage.py startapp listings
 ```
 
@@ -60,15 +60,16 @@ LES MODELES: models.py
 - Un modéle permet d'avoir une mémoire persistante.
 - Ajouter d'abord le models dans models.py
 - Creer le modele:
-```
+```bash
 > python3 manage.py makemigrations
-'''
 ```
 
 - le mettre à jour:
-	python manage.py migrate
+```bash
+> python manage.py migrate
+```
 
 ---------------------------------------------------------------------------
 LES TEMPLATES / GABARITS: Affiche et recueille les données .
 
-Voir README.md dans listings/templates/listings/Readme.md
+Voir "README.md" dans listings/templates/listings/Readme.md

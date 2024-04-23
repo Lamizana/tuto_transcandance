@@ -13,12 +13,15 @@ du HTML spécifique à la page.
 
 La balise ```{% block %}``` est un espace réservé dans lequelle on peut y placer
 du contenue, elle se termine par ```{% endblock %}```
-Notre block ici s'appelle **content**...
+Notre block ici s'appelle **content**.
+
+Notre gabarit de base est l'endroit idéal pour charger un fichier CSS
+en utilisant la balise de gabarits ```static```.
 
 ----------------------------------------------------------------
 ### Mise en place du gabarit dans chaque fichier.html:
 Pour chaque fichier.html qui se servira de la base, mettre au debut:
-```
+```python
 {% extends 'listings/base.html' %}
 {% block content %}
 <ul>
@@ -28,9 +31,11 @@ Pour chaque fichier.html qui se servira de la base, mettre au debut:
 
 {% endblock %}
 ```
+Les instructions ```{%...%}``` sont des ***balises de gabarits***.
+
 ----------------------------------------------------------------
 ### Mettre a jour view.py:
-```
+```python
 from django.shortcuts import render
 
 def accueil(request):
@@ -39,19 +44,28 @@ def accueil(request):
 ```
 > render prend plusieurs parametres.
 
-```'bands':bands``` permet de recupérer tous les objects de Bands.
 ```'listings/accueil.html'``` est le chemin du fichier.html a récupérer.
-Les instructions ```{%...%}``` sont des ***balises de gabarits***.
+
+Nous appelons le troisième argument un « dictionnaire de contexte ».
+```'bands':bands``` permet de recupérer tous les objects de Bands.
 
 ----------------------------------------------------------------
 ### Utilisation des filtre de gabarits:
 Permet d'appliquer un certains formatage.
-```
+```html
 <li>{{ band.name|upper }}</li>
 ``` 
 > Met le nom en majuscule.
-```
+```html
 <li>{{ band.name|length }}</li>
 ```
 > Donne la longueur du nom.
+
+----------------------------------------------------------------
+### Récapitulatif de l'architecture MVT:
+Voici les trois principaux composants de l'architecture MVT:
+- M: les modeles.
+- V: les vues.
+- T les templates.
+
 
