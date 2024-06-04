@@ -1,0 +1,22 @@
+{% load static %}
+
+<p>
+    <a href="{% url 'pong:index' %}">Accueil</a> - 
+    <a href="{% url 'pong:profils' %}">Profil</a> - 
+    <a href="{% url 'pong:pong' %}">Pong</a> - 
+    {% if user.is_authenticated %}
+        Bonjour {{ user.username }}.
+        <form method="post" action="{% url 'utilisateurs:logout' %}">
+            {% csrf_token %}
+            <button name="submit">Déconnexion</button>
+        </form>
+        
+    {% else %}
+        <a href="{% url 'utilisateurs:register' %}">S'inscrire</a> -
+        <a href="{% url 'utilisateurs:login' %}">Se connecter</a>
+        {% endif %}
+
+</p>
+
+{% block content %}{% endblock content %}
+<script src="{% static 'pong.js' %}"></script>

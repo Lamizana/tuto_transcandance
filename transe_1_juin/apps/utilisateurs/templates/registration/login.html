@@ -1,0 +1,22 @@
+{% extends "pong/base.html" %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>
+            Wrong name !
+        </p>
+    {% endif %}
+
+    <form method="post" action="{% url 'utilisateurs:login' %}" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button name="submit">Se connecter</button>
+
+        <input type="hidden" name="next"
+            value="{% url 'pong:index' %}" />
+    </form>
+
+
+{% endblock content %}

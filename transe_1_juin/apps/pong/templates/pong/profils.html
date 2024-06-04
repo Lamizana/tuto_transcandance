@@ -1,0 +1,15 @@
+{% extends "pong/base.html" %}
+
+
+{% block content %}
+    <h1>Profils utilisateurs.</h1>
+    <ul>
+        {% for player in players %}
+            <li>
+                <a href="{% url 'pong:profil' player.id %}">{{ player }}</a>
+            </li>
+        {% empty %}
+        <li>Aucun Utilisateur n'a encore été ajouter.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "pong/base.html" %}
+
+
+{% block content %}
+    
+    <h1>Profil: {{ player }}.</h1>
+    <h3>{{ player.date_added|date:'d F Y, H:i' }}</h3>
+
+    <ul>
+        <li><strong>Wins:</strong> {{ player.wins }}</li>
+        <li><strong>Loses:</strong> {{ player.loses }}</li>
+
+        <li><strong>Tournament position:</strong>
+            {% for position in player.tourPos %}
+                {{ position }}  /
+            {% empty %}
+                None
+            {% endfor %}
+        </li>
+
+        <li><strong>Ennemy's duel name:</strong>
+            {% for enemy in player.duelEnemy %}
+                {{ enemy }}  /
+            {% empty %}
+                <li>None</li>
+            {% endfor %}
+        </li>
+
+        <li><strong>Duel me:</strong>
+            {% for me in player.duelme %}
+                {{ me }}  /
+            {% empty %}
+               None
+            {% endfor %}
+        </li>
+
+        <li><strong>Duel them:</strong>
+            {% for them in player.duelthem %}
+                {{ them }}  /
+            {% empty %}
+                None
+            {% endfor %}
+        </li>
+
+        <li><strong>Friend's ID:</strong>
+            {% for friend in player.friendsId %}
+                {{ friend }}  /
+            {% empty %}
+                Empty
+            {% endfor %}
+        </li>
+
+        <li><strong>language:</strong> {{ player.language }}</li>
+    </ul>
+{% endblock content %}
