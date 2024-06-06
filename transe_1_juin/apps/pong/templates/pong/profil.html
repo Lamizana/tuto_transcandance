@@ -3,8 +3,8 @@
 
 {% block content %}
     
-    <h1>Profil: {{ player }}.</h1>
-    <h3>{{ player.date_added|date:'d F Y, H:i' }}</h3>
+    <h1>Hello {{ player }}, bienvenue sur ton profil.</h1>
+    <h3>date de creation: {{ player.date_added|date:'d F Y, H:i' }}</h3>
 
     <ul>
         <li><strong>Wins:</strong> {{ player.wins }}</li>

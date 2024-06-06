@@ -18,26 +18,26 @@ class Player(models.Model):
     wins = models.IntegerField(blank=True, default='0')
     loses = models.IntegerField(blank=True, default='0')
 
-    # tourPos = ArrayField(models.IntegerField(null=True, blank=True), null=True, blank=True)
-    # tourAll = ArrayField(models.IntegerField(null=True, blank=True), null=True, blank=True)
+    tourPos = ArrayField(models.IntegerField(null=True, blank=True), null=True, blank=True)
+    tourAll = ArrayField(models.IntegerField(null=True, blank=True), null=True, blank=True)
 
-    # duelMyname = ArrayField(models.CharField(null=True, blank=True),null=True, blank=True)
-    # duelEnemy = ArrayField(models.CharField(null=True, blank=True),null=True, blank=True)
-    # duelMe = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
-    # duelThem = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
+    duelMyname = ArrayField(models.CharField(null=True, blank=True),null=True, blank=True)
+    duelEnemy = ArrayField(models.CharField(null=True, blank=True),null=True, blank=True)
+    duelMe = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
+    duelThem = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
 
-   # FriendsId = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
+    FriendsId = ArrayField(models.IntegerField(null=True, blank=True),null=True, blank=True)
 
     LANGUAGE_CHOICES = (
         ('EN', 'english'),
         ('ES', 'spanish'),
         ('FR', 'french'),
     )
-   # language = models.CharField(max_length=2, choices=LANGUAGE_CHOICES)
-    # anglais par default
+ 
+    language = models.CharField(max_length=2, choices=LANGUAGE_CHOICES)
 
     # Supprime tous les éléments liées a l'utilisateur:
-   # owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.nickname}'

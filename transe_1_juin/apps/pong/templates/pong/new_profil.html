@@ -1,12 +1,15 @@
-{% extends "pong/base.html" %}
+{% comment %} {% extends "pong/base.html" %}
 
-{% block content %}
+{% block content %} {% endcomment %}
+<p>
+    <h1>Bonjour {{ user.username }}</h1>
+</p>
 
     <form method="post" action="{% url 'pong:new_profil' %}" class="form">
     {% csrf_token %}
     {{ form.as_p }}
 
-        <button name="submit">Donne votre pseudo</button>
+        <button name="submit">Renseignez votre profil.</button>
 
 </form>
-{% endblock content %}
+{% comment %} {% endblock content %} {% endcomment %}

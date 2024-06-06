@@ -15,7 +15,7 @@ def register(request):
         
         if form.is_valid():
             new_user = form.save()
-            # Ouvrir session de l'utilisateur et diriger vers la page accueil:
+            # Ouvrir session de l'utilisateur et diriger vers la page profil:
             login(request, new_user)
             return redirect('pong:new_profil')
         
