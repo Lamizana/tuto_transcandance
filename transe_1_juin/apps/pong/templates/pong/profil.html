@@ -3,15 +3,15 @@
 
 {% block content %}
     
-    <h1>Hello {{ player }}, bienvenue sur ton profil.</h1>
-    <h3>date de creation: {{ player.date_added|date:'d F Y, H:i' }}</h3>
+    <h1>Hello {{ profil }}, bienvenue sur ton profil.</h1>
+    <h3>date de creation: {{ profil.date_added|date:'d F Y, H:i' }}</h3>
 
     <ul>
-        <li><strong>Wins:</strong> {{ player.wins }}</li>
-        <li><strong>Loses:</strong> {{ player.loses }}</li>
+        <li><strong>Wins:</strong> {{ profil.wins }}</li>
+        <li><strong>Loses:</strong> {{ profil.loses }}</li>
 
         <li><strong>Tournament position:</strong>
-            {% for position in player.tourPos %}
+            {% for position in profil.tourPos %}
                 {{ position }}  /
             {% empty %}
                 None
@@ -19,7 +19,7 @@
         </li>
 
         <li><strong>Ennemy's duel name:</strong>
-            {% for enemy in player.duelEnemy %}
+            {% for enemy in profil.duelEnemy %}
                 {{ enemy }}  /
             {% empty %}
                 <li>None</li>
@@ -27,7 +27,7 @@
         </li>
 
         <li><strong>Duel me:</strong>
-            {% for me in player.duelme %}
+            {% for me in profil.duelme %}
                 {{ me }}  /
             {% empty %}
                None
@@ -35,7 +35,7 @@
         </li>
 
         <li><strong>Duel them:</strong>
-            {% for them in player.duelthem %}
+            {% for them in profil.duelthem %}
                 {{ them }}  /
             {% empty %}
                 None
@@ -43,13 +43,13 @@
         </li>
 
         <li><strong>Friend's ID:</strong>
-            {% for friend in player.friendsId %}
+            {% for friend in profil.friendsId %}
                 {{ friend }}  /
             {% empty %}
                 Empty
             {% endfor %}
         </li>
 
-        <li><strong>language:</strong> {{ player.language }}</li>
+        <li><strong>language:</strong> {{ profil.language }}</li>
     </ul>
 {% endblock content %}

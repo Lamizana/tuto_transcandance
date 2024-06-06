@@ -13,17 +13,17 @@ def index(request):
 
 @login_required
 def profil(request):
-    """Afficher un seul sujet et toutes ses entrées."""
+    """Afficher un seul User et toutes ses donn€es."""
     
     profil = Player.objects.get(owner=request.user)
     players = Player.objects.all()
-    context = {'player': profil, 'players': players}
+    context = {'profil': profil, 'players': players}
    
     return render(request, 'pong/profil.html', context)
 
 
 def new_profil(request):
-    """Ajoute un nouveau Player."""
+    """Ajoute un nouvel utilisateur et son profil."""
 
     if request.method != 'POST':
         # Afficher un formulaire d'inscription vide:
@@ -43,8 +43,17 @@ def new_profil(request):
 
 
 @login_required
+def del_user(request):
+    """Supprime un utilisateur et supprime ses donn€es."""
+    
+    user = request.user
+    user.delete()
+    return redirect("pong:index")
+
+
+@login_required
 def pong(request):
-    """Page du jeux Pong"""
+    """Page du jeux Pong."""
     
     players = Player.objects.all()
     player = Player.objects.get(owner=request.user)
