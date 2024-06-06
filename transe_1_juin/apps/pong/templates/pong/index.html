@@ -1,12 +1,21 @@
 {% extends "pong/base.html" %}
 
-<p>PONG the Rematch</p>
+{% block page_header %}
 
-{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-3">Pong the Rematch</h1>
 
-    <p>
-        Bienvenue sur PONG! ce site permet de jouer a pong en multijoueur!
-        Faire des matchmaking et inclus aussi l'hitorique de partie et amis
-    </p>
+        <p class="lead">
+            Bienvenue sur PONG! ce site permet de jouer a pong en multijoueur!
+            Faire des matchmaking et inclus aussi l'hitorique de partie et amis
+        </p>
 
-{% endblock content %}
+        {% if user.is_authenticated %}
+            <p>Content de vous revoir {{ user.username }} !</p>
+        {% else %}
+            <a class="btn btn-lg btn-primary" href="{% url 'utilisateurs:
+                register' %}" role="button">Sign-up &raquo;</a>
+        {% endif %}
+    </div>
+
+{% endblock page_header %}

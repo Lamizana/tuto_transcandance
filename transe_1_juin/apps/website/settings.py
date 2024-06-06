@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'pong',
     'utilisateurs',
 
+    # Applications tierces.
+    'django_bootstrap5',
+    
     # Application par default.
     'django.contrib.admin',
     'django.contrib.auth',

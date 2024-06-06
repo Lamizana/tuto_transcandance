@@ -3,6 +3,7 @@ from .models                        import Player
 from .forms                         import PlayerForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models     import User
+from django.http                    import Http404
  
 # Create your views here.
 def index(request):
@@ -18,7 +19,6 @@ def profil(request):
     profil = Player.objects.get(owner=request.user)
     players = Player.objects.all()
     context = {'profil': profil, 'players': players}
-   
     return render(request, 'pong/profil.html', context)
 
 

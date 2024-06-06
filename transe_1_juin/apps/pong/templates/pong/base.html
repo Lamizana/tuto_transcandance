@@ -1,22 +1,86 @@
 {% load static %}
+{% load django_bootstrap5 %}
 
-<p>
-    <a href="{% url 'pong:index' %}">Accueil</a> - 
-    <a href="{% url 'pong:profil' %}">Profil</a> - 
-    <a href="{% url 'pong:pong' %}">Pong</a> -
-    {% if user.is_authenticated %}
-        Bonjour {{ user.username }}.
-        <form method="post" action="{% url 'utilisateurs:logout' %}">
-            {% csrf_token %}
-            <button name="submit">Déconnexion</button>
-        </form>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1, shrink-to-fit=no">
+        <title>Pong, the Rematch</title>
+
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+
+    <body>
+        <!-- Section de page reservee au lien de navigation. -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light
+            mb-4 border">
+          
+           <!-- Liste tous les liens dans la barre de navigation. -->
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <div class="container-fluid">
+                    <!-- Lien vers la page d'accueil en haut a gauche. -->
+                    <a class="navbar-brand" href="{% url 'pong:index' %}        ">Home</a>
+
+                    <!-- Affiche un boutton si ecran trop petit. -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!-- liens compris dans le bouton. -->
+                    <div class="collapse navbar-collapse"       id="navbarNavAltMarkup">
+                        <!-- Lien profil. -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'pong:profil' %}">Profil</a> 
+                            </li>
+                        </ul> 
+                        <!-- Lien Pong. -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'pong:pong' %}
+                                ">Pong</a> 
+                            </li>
+                        </ul> 
+                        <!-- si Utilsateur connecté. -->
+                        <ul class="navbar-nav ml-auto">
+                        {% if user.is_authenticated %}
+                            <!-- Lien deconnexion. -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'utilisateurs:logout' %}">Logout</a>
+                            </li>
+  
+                        {% else %}
+                            <!-- Lien inscription. -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url            'utilisateurs:register' %}">Sign-up</a>
+                            </li>
+                            <!-- Lien connexion. -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'utilisateurs:login' %}">Login</a>
+                            </li>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </nav>
+
+        <!-- Définit la zone principale de la page. -->
+        <main role="main" class="container">
+            <div class="pb-2 mb-2 border-bottom">
+                {% block page_header %}{% endblock page_header %}
+            </div>
+            <div>
+                {% block content %}{% endblock content %}
+            </div>
+        </main>
+        
+    </body>
     
-    {% else %}
-        <a href="{% url 'utilisateurs:register' %}">S'inscrire</a> -
-        <a href="{% url 'utilisateurs:login' %}">Se connecter</a>
-    {% endif %}
+    <script src="{% static 'pong.js' %}"></script>
 
-</p>
-
-{% block content %}{% endblock content %}
-<script src="{% static 'pong.js' %}"></script>
+</html>
