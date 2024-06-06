@@ -10,7 +10,7 @@
             {% csrf_token %}
             <button name="submit">Déconnexion</button>
         </form>
-        <a href="{% url 'pong:del_user' %}">Suppression</a> -
+    
     {% else %}
         <a href="{% url 'utilisateurs:register' %}">S'inscrire</a> -
         <a href="{% url 'utilisateurs:login' %}">Se connecter</a>

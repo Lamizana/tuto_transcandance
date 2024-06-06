@@ -4,6 +4,12 @@
 {% block content %}
     
     <h1>Hello {{ profil }}, bienvenue sur ton profil.</h1>
+
+    <div>
+        ATTENTION: la supression du profil est definitive !
+        <a href="{% url 'pong:del_user' %}">Suppression</a>
+    </div>
+
     <h3>date de creation: {{ profil.date_added|date:'d F Y, H:i' }}</h3>
 
     <ul>
