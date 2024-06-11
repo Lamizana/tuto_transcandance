@@ -1,0 +1,19 @@
+DataBase
+
+Player : 
+		- pseudo -> plus 2 caractere pas plus de 16, ne peut pas être déjà pris
+		- pwd -> 8 caractere 1 Majuscule et un 1 special moins de 100 caracteres
+		- email -> doit avoir un @ et un .  |  ne peut pas être déjà pris 
+		- token STrING
+		- nb de parties total 
+		- nb de parties gagnées
+		- * historique
+		
+Historique des Parties par player pour partie en ligne
+		- liste des parties score et joueur adverse(ecrit en dur)
+		- classement dans le tournois avec nb de player et position
+
+Tournois local
+		- liste des players
+		- liste des parties
+		- 

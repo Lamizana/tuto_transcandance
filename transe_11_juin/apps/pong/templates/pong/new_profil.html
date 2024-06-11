@@ -1,0 +1,11 @@
+
+<p>
+    <h1>Bonjour {{ user.username }}.</h1>
+</p>
+
+<form method="post" action="{% url 'pong:new_profil' %}" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Renseignez votre profil.</button>
+
+</form>

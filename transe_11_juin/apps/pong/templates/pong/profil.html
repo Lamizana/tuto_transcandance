@@ -1,0 +1,73 @@
+{% extends "pong/base.html" %}
+
+
+{% block content %}
+    
+    <h1>Hello {{ profil.owner }}, bienvenue sur ton profil.</h1>
+
+    <div>
+        ATTENTION: la supression du profil est definitive !
+        <a href="{% url 'pong:del_user' %}">Suppression</a>
+    </div>
+
+    <h3>date de creation: {{ profil.date_added|date:'d F Y, H:i' }}</h3>
+
+    <ul>
+        <li><strong>Pseudo:</strong> {{ profil.nickname }}</li>
+        <li><strong>Wins:</strong> {{ profil.wins }}</li>
+        <li><strong>Loses:</strong> {{ profil.loses }}</li>
+
+        <li><strong>Tournament position:</strong>
+            {% for position in profil.tourPos %}
+                {{ position }}  /
+            {% empty %}
+                None
+            {% endfor %}
+        </li>
+
+        <li><strong>My name in duel :</strong>
+            {% for name in profil.duelmyName %}
+                <li>{{ name }}
+            {% empty %}
+                <li>None
+            {% endfor %}
+                </li>
+        </li>
+
+        <li><strong>Ennemy's duel name:</strong>
+            {% for enemy in profil.duelEnemy %}
+                <li>{{ enemy }}
+            {% empty %}
+                <li>None
+            {% endfor %}
+        </li>
+        
+        </li>
+
+        <li><strong>Duel me:</strong>
+            {% for me in profil.duelme %}
+                {{ me }}  /
+            {% empty %}
+               None
+            {% endfor %}
+        </li>
+
+        <li><strong>Duel them:</strong>
+            {% for them in profil.duelthem %}
+                {{ them }}  /
+            {% empty %}
+                None
+            {% endfor %}
+        </li>
+
+        <li><strong>Friend's ID:</strong>
+            {% for friend in profil.friendsId %}
+                {{ friend }}  /
+            {% empty %}
+                Empty
+            {% endfor %}
+        </li>
+
+        <li><strong>language:</strong> {{ profil.language }}</li>
+    </ul>
+{% endblock content %}

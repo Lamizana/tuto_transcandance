@@ -1,0 +1,23 @@
+
+{% extends 'pong/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+
+
+<p>JEUX</p>
+
+    <button lang="fr" id = 'btnCreateSolo'>Nouvelle partie</button>
+    <button lang="fr" id = 'btnCreate2Player'>Nouvelle partie Multi</button>
+    <canvas class="canva"></canvas>
+
+
+    <script>
+
+    </script>
+
+    <script type="text/javascript" src="{% static "pong.js" %}"></script>
+
+
+</body>
+{% endblock %}

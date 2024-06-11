@@ -1,0 +1,17 @@
+1 documentation
+		liste a puce 
+		
+2  dictionnaire des données ex :
+				utilisateur : Nom = pas de charatere speciaux sauf _
+							  pseudo = s'affiche sur les parties et l'historique des scores , peut etre changé
+							  mot de passe = huit charactere min, 1 Majuscule min, 1 chiffre min , peut etre changé
+							  
+3 frontend
+
+4 backend
+
+5 authentification : peut-on voir l'historique des parties 
+
+6 api / server
+
+7 base de donnée
